@@ -1,20 +1,62 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+<ion-header collapse="fade">
+  <ion-toolbar color="vermelho-base" class="ion-text-center">
+    <ion-title> D.S.M. - Fatec Jahu </ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="help-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md="6" size-lg="6" class="ion-text-center">
+        <img src="assets/fatec_ra_bauru_jahu_cor.png" style="max-height: 70px" />
+      </ion-col>
+      <ion-col size="12" size-md="6" size-lg="6" class="ion-justify-content-center" style="display: flex">
+        <div style="max-width: 400px; width: 100%">
+          <ion-list mode="ios">
+            <ion-item detail="true" href="https://www.vestibularfatec.com.br/" target="_blank" class="ion-text-center">
+              <ion-icon aria-hidden="true" name="today-outline" slot="start"></ion-icon>
+              <ion-label color="verde-base">Vestibular</ion-label>
+            </ion-item>
+            <ion-item detail="true" href="https://fatecjahu.edu.br/cursos/desenvolvimento-de-software-multiplataforma/"
+              target="_blank" class="ion-text-center">
+              <ion-icon aria-hidden="true" name="school-outline" slot="start"></ion-icon>
+              <ion-label color="blueberry-base">Sobre o Curso D.S.M.</ion-label>
+            </ion-item>
+            <ion-item detail="true" href="https://fatecjahu.edu.br/" target="_blank" class="ion-text-center">
+              <ion-icon aria-hidden="true" name="home-outline" slot="start"></ion-icon>
+              <ion-label color="coral-base">Site da Fatec</ion-label>
+            </ion-item>
+          </ion-list>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle color="vermelho-base">Instruções:</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p> <ion-text color="verde-base"><b>1.</b></ion-text> Tire uma foto ou escolha uma da sua galeria clicando no
+        botão <b>TIRAR FOTO</b>.
+      </p>
+      <p> <ion-text color="verde-base"><b>2.</b></ion-text> Clique sobre a foto carregada e escolha uma das IAs
+        programadas.
+      </p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
+
+<ion-footer collapse="fade">
+  <ion-button expand="block" size="large" color="destaque-base">
+    <ion-icon slot="start" name="camera"></ion-icon>
+    TIRAR FOTO
+  </ion-button>
+</ion-footer>
