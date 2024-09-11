@@ -1,4 +1,4 @@
-<ion-header collapse="fade">
+<ion-header>
   <ion-toolbar color="vermelho-base" class="ion-text-center">
     <ion-title> D.S.M. - Fatec Jahu </ion-title>
 
@@ -38,23 +38,24 @@
     </ion-row>
   </ion-grid>
 
-  <ion-card>
-    <ion-card-header>
-      <ion-card-subtitle color="vermelho-base">Instruções:</ion-card-subtitle>
-    </ion-card-header>
-
-    <ion-card-content>
-      <p> <ion-text color="verde-base"><b>1.</b></ion-text> Tire uma foto ou escolha uma da sua galeria clicando no
-        botão <b>TIRAR FOTO</b>.
-      </p>
-      <p> <ion-text color="verde-base"><b>2.</b></ion-text> Clique sobre a foto carregada e escolha uma das IAs
-        programadas.
-      </p>
-    </ion-card-content>
-  </ion-card>
+  <ion-accordion-group>
+    <ion-accordion value="first">
+      <ion-item slot="header">
+        <ion-label color="vermelho-base"> <b>Instruções </b></ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <p> <ion-text color="verde-base"><b>1.</b></ion-text> Tire uma foto ou escolha uma da sua galeria clicando no
+          botão <b>TIRAR FOTO</b>.
+        </p>
+        <p> <ion-text color="verde-base"><b>2.</b></ion-text> Clique sobre a foto carregada e escolha uma das IAs
+          programadas.
+        </p>
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
 </ion-content>
 
-<ion-footer collapse="fade">
+<ion-footer class="ion-no-border">
   <ion-button expand="block" size="large" color="destaque-base">
     <ion-icon slot="start" name="camera"></ion-icon>
     TIRAR FOTO
