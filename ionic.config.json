@@ -1,0 +1,7 @@
+{
+  "name": "fatec-jahu-ia",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
