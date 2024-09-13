@@ -182,3 +182,10 @@
 	--ion-color-shade: var(--ion-color-pink-base-shade);
 	--ion-color-tint: var(--ion-color-pink-base-tint);
 }
+
+.list-ios,
+ion-item {
+  background: transparent;
+  --background: transparent;
+  --ion-item-background: transparent;
+}
