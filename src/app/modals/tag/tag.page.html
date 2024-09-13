@@ -8,6 +8,9 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <ion-text color="blueberry-base">
+    Esta é a lista de itens que a Inteligência Artificial identificou, juntamente com o nível de certeza (%) atribuído a cada item.
+  </ion-text>
   <ion-item lines="full" *ngFor="let tag of tagsImage; let i = index">
     <ion-label>{{i | number: '2.0-0'}}{{'. ' + tag.name | titlecase}}</ion-label>
     <ion-badge *ngIf="tag.confidence"
