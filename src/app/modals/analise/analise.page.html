@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="azul-base">
+    <ion-title>Análise da Imagem</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="modalController.dismiss()">Fechar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Descrição da Imagem</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item lines="full" >
+          <ion-label color="destaque-base" class="ion-text-center"> {{captions | titlecase }} </ion-label>
+        </ion-item>
+        <ion-item lines="full">
+          <ion-label>Confiança </ion-label>
+          <ion-badge *ngIf="confidence"
+            [color]="(confidence > 0.79) ? 'success' : (confidence > 0.59) ? 'warning' : (confidence > 0.49) ? 'medium' : 'danger'"
+            slot="end">
+            {{confidence | percent:'0.2-2'}}
+          </ion-badge>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-item lines="full">
+    <ion-label color="coral-base" position="stacked">Itens encontrados:</ion-label>
+    <ul>
+      <li *ngFor="let tag of tags">{{tag}}</li>
+    </ul>
+  </ion-item>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="destaque-base" (click)="closeModal()">
+      <ion-icon name="chevron-back-circle-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

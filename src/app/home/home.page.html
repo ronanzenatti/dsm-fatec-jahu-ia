@@ -1,12 +1,6 @@
 <ion-header>
   <ion-toolbar color="vermelho-base" class="ion-text-center">
     <ion-title> D.S.M. - Fatec Jahu </ion-title>
-
-    <ion-buttons slot="end">
-      <ion-button>
-        <ion-icon slot="icon-only" name="help-circle"></ion-icon>
-      </ion-button>
-    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -50,6 +44,9 @@
         <p> <ion-text color="verde-base"><b>2.</b></ion-text> Clique sobre a foto carregada e escolha uma das IAs
           programadas.
         </p>
+        <p> <ion-text color="coral-base"><b>IMPORTANTE:</b></ion-text> As imagens ficam salvas apenas em seu aparelho,
+          após o processamento da Inteligência Artificial o arquivo é deletado do servidor da Microsoft.
+        </p>
       </div>
     </ion-accordion>
   </ion-accordion-group>
@@ -57,14 +54,15 @@
   <ion-grid>
     <ion-row>
       <ion-col size="6" *ngFor="let photo of photoService.photos; index as position">
-        <ion-img [src]="photo.webviewPath"></ion-img>
+        <ion-img [src]="photo.webviewPath" (click)="showActionSheet(photo, position)"></ion-img>
       </ion-col>
     </ion-row>
   </ion-grid>
 
 
+
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button color="destaque-base" (click)="addPhotoToGallery()">
+    <ion-fab-button color="destaque-base" (click)="photoService.addNewToGallery()">
       <ion-icon name="camera"></ion-icon>
     </ion-fab-button>
   </ion-fab>

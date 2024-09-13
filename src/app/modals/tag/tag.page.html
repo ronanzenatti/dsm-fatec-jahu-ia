@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="azul-base">
+    <ion-title>Itens na Imagem</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="modalController.dismiss()">Fechar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item lines="full" *ngFor="let tag of tagsImage; let i = index">
+    <ion-label>{{i | number: '2.0-0'}}{{'. ' + tag.name | titlecase}}</ion-label>
+    <ion-badge *ngIf="tag.confidence"
+      [color]="(tag.confidence > 0.79) ? 'success' : (tag.confidence > 0.59) ? 'warning' : (tag.confidence > 0.49) ? 'medium' : 'danger'"
+      slot="end">
+      {{tag.confidence | percent:'0.2-2'}}
+    </ion-badge>
+  </ion-item>
+
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button color="destaque-base" (click)="closeModal()">
+      <ion-icon name="chevron-back-circle-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
